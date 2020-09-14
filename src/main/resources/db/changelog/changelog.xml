@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet id="1" author="ls">
+        <preConditions>
+            <sqlCheck expectedResult="0">
+                <![CDATA[
+                select count(*) from information_schema.tables t where t.table_name = 'patient' or t.table_name = 'visit'
+            ]]>
+            </sqlCheck>
+        </preConditions>
+        <sql>
+            <![CDATA[
+            create table if not exists patient (
+                id bigint primary key,
+                name varchar(255),
+                surname varchar(255),
+                second_name varchar(255),
+                birthday date
+            );
+            create table if not exists visit (
+                id bigint primary key,
+                patient_id bigint,
+                date_out date,
+                foreign key(patient_id) references patient(id)
+            );
+            create sequence id_seq;
+        ]]>
+        </sql>
+    </changeSet>
+    <changeSet id="2" author="ls">
+        <sql>
+            <![CDATA[
+                insert into patient values
+                (next value for id_seq, 'Vasya', 'Vsailievich', 'Vasiliev', '1994-05-01'),
+                (next value for id_seq, 'Nikita', 'Vasilievich', 'Vasiliev', '1997-08-06'),
+                (next value for id_seq, 'Nikita', 'Nikitovich', 'Nikitin', '1994-02-25'),
+                (next value for id_seq, 'Artyom', 'Atryomovich', 'Artyomov', '1997-08-06'),
+                (next value for id_seq, 'Aleksey', 'Nikitovich', 'Alexeev', '1972-09-03');
+
+                insert into visit values
+                (next value for id_seq, 1, now()),
+                (next value for id_seq, 1, now()),
+                (next value for id_seq, 1, now()),
+                (next value for id_seq, 2, now()),
+                (next value for id_seq, 3, now()),
+                (next value for id_seq, 2, now()),
+                (next value for id_seq, 3, now()),
+                (next value for id_seq, 3, now()),
+                (next value for id_seq, 1, now()),
+                (next value for id_seq, 4, now()),
+                (next value for id_seq, 4, now()),
+                (next value for id_seq, 5, now())
+            ]]>
+        </sql>
+    </changeSet>
+</databaseChangeLog>
