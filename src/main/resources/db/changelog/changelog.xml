@@ -38,21 +38,28 @@
                 (next value for id_seq, 'Nikita', 'Vasilievich', 'Vasiliev', '1997-08-06'),
                 (next value for id_seq, 'Nikita', 'Nikitovich', 'Nikitin', '1994-02-25'),
                 (next value for id_seq, 'Artyom', 'Atryomovich', 'Artyomov', '1997-08-06'),
-                (next value for id_seq, 'Aleksey', 'Nikitovich', 'Alexeev', '1972-09-03');
+                (next value for id_seq, 'Aleksey', 'Nikitovich', 'Alexeev', '1972-09-03'),
+                (next value for id_seq, 'Alena', 'Ivanova', 'Ivanovna', '1972-09-03'),
+                (next value for id_seq, 'Michail', 'Atryomovich', 'Alexeev', '1978-01-03'),
+                (next value for id_seq, 'Vasya', 'Petuhov', 'Ivanov', '2000-09-03'),
+                (next value for id_seq, 'Jenya', 'Petrov', 'Ivanov', '2000-09-03'),
+                (next value for id_seq, 'Sasha', 'Petrovich', 'Samoylov', '1950-03-06'),
+                (next value for id_seq, 'Andrey', 'Petuhov', 'Dbcde', '1981-12-02'),
+                (next value for id_seq, 'Andrey', 'Shilov', 'edcbD', '1968-08-02');
 
                 insert into visit values
                 (next value for id_seq, 1, now()),
-                (next value for id_seq, 1, now()),
-                (next value for id_seq, 1, now()),
                 (next value for id_seq, 2, now()),
                 (next value for id_seq, 3, now()),
-                (next value for id_seq, 2, now()),
-                (next value for id_seq, 3, now()),
-                (next value for id_seq, 3, now()),
-                (next value for id_seq, 1, now()),
                 (next value for id_seq, 4, now()),
-                (next value for id_seq, 4, now()),
-                (next value for id_seq, 5, now())
+                (next value for id_seq, 5, now()),
+                (next value for id_seq, 6, now()),
+                (next value for id_seq, 7, now()),
+                (next value for id_seq, 8, now()),
+                (next value for id_seq, 9, now()),
+                (next value for id_seq, 10, now()),
+                (next value for id_seq, 11, now()),
+                (next value for id_seq, 12, now());
             ]]>
         </sql>
     </changeSet>

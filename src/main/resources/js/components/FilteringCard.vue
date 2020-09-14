@@ -25,8 +25,8 @@
                 </v-col>
             </v-row>
             <v-card-actions>
-                <v-btn @click="clearFields" color="red">clear</v-btn>
-                <v-btn @click="updateByFields" color="primary">select</v-btn>
+                <v-btn @click="clearFields" text color="red">clear</v-btn>
+                <v-btn @click="updateByFields" text color="primary">select</v-btn>
             </v-card-actions>
         </v-card-text>
     </v-card>
