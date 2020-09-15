@@ -4,7 +4,7 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
 
     <changeSet id="1" author="ls">
-        <preConditions>
+        <preConditions onFail="MARK_RAN">
             <sqlCheck expectedResult="0">
                 <![CDATA[
                 select count(*) from information_schema.tables t where t.table_name = 'patient' or t.table_name = 'visit'

@@ -33,7 +33,7 @@ public class VisitController {
     public ResponseEntity<Visit> getById(@PathVariable Long id) {
         return visitService.getById(id)
                 .map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.badRequest().build());
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PostMapping
